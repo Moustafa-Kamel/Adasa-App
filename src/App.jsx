@@ -8,7 +8,7 @@ import MainLayout from './Components/MainLayout/MainLayout';
 import PostDetails from './Components/Blog/PostDetails/PostDetails';
 
 const router = createBrowserRouter([
-  {
+ {
     path: '/',
     element: <MainLayout />,
     errorElement: <NotFound />,
@@ -17,10 +17,11 @@ const router = createBrowserRouter([
       { path: 'about', element: <About /> },
       { path: 'blog', element: <Blog /> },
       { path: 'blog/:slug', element: <PostDetails /> },
-      // {path:'*', element:<NotFound/>}
     ]
   }
-])
+], {
+  basename: '/Adasa-App'   // 👈 ضيف ده هنا - نفس اسم الريبو بالظبط
+})
 function App() {
 
   return (
