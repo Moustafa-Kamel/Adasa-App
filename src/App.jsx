@@ -19,9 +19,7 @@ const router = createBrowserRouter([
       { path: 'blog/:slug', element: <PostDetails /> },
     ]
   }
-],{
-  basename: '/Adasa-App'
-})
+])
 function App() {
 
   return (

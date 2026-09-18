@@ -38,7 +38,7 @@ export default function AboutTalkWithUs() {
 
           {/* زر تصفح المقالات */}
           <Link
-            to="/blog"
+            to="blog"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-white/40 text-white font-semibold rounded-xl hover:bg-white hover:text-[#0a0a0a] transition-all duration-300"
           >
             تصفح المقالات
