@@ -1,7 +1,6 @@
 import { FaXTwitter, FaGithub, FaLinkedin, FaCheck } from "react-icons/fa6";
 export default function AboutOurTeam({posts}) {
     const members = posts.map(m=>m.author)
-    console.log(members);
     
 
   return (
@@ -21,9 +20,9 @@ export default function AboutOurTeam({posts}) {
 
         {/* ===== الشبكة ===== */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {members.map((member) => (
+          {members.map((member,index) => (
             <div
-              key={member}
+              key={index}
               className="group bg-[#161616] rounded-2xl p-6 text-center border border-[#262626] hover:border-orange-500/30 transition-all duration-300"
             >
               {/* --- الصورة + علامة التوثيق --- */}

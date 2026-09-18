@@ -1,5 +1,6 @@
 import { HiArrowLeft, HiOutlineInformationCircle } from 'react-icons/hi';
 import { HiOutlineDocumentText, HiOutlineUsers, HiOutlineFolder, HiOutlinePencilSquare } from 'react-icons/hi2';
+import { Link } from 'react-router-dom';
 export default function HeroSecHome() {
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-[#0a0a0a]">
@@ -30,14 +31,14 @@ export default function HeroSecHome() {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
-            <a className="btn-primary inline-flex items-center justify-center gap-2 group" href="/blog" data-discover="true">
+            <Link to='/blog' className="btn-primary inline-flex items-center justify-center gap-2 group" href="/blog" data-discover="true">
               <span>استكشف المقالات</span>
               <HiArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-            </a>
-            <a className="btn-secondary inline-flex items-center justify-center gap-2" href="/about" data-discover="true">
+            </Link>
+            <Link to='/about' className="btn-secondary inline-flex items-center justify-center gap-2" href="/about" data-discover="true">
               <HiOutlineInformationCircle className="w-5 h-5" />
               <span>اعرف المزيد</span>
-            </a>
+            </Link>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">

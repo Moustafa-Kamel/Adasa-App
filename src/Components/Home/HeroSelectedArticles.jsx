@@ -33,14 +33,14 @@ const formatDate = (dateString) => {
                         <p className="section-subtitle max-w-lg">محتوى منتقى لبدء رحلة تعلمك</p>
                     </div>
 
-                    <a
+                    <Link to='/blog'
                         className="group inline-flex items-center gap-2 px-5 py-2.5 bg-linear-to-r from-orange-500 to-orange-600 text-white rounded-xl font-medium transition-all duration-300 hover:-translate-y-0.5"
-                        href="/blog"
+                    
                         data-discover="true"
                     >
                         <span>عرض الكل</span>
                         <HiArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-                    </a>
+                    </Link>
                 </div>
 
                 {/* Articles List */}

@@ -3,6 +3,7 @@ import { FaUser } from "react-icons/fa";
 import { BsGearFill } from "react-icons/bs";
 import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
 import { HiOutlineArrowNarrowLeft } from 'react-icons/hi';
+import { Link } from 'react-router-dom';
 
 export default function HomeCategories() {
 
@@ -27,9 +28,9 @@ export default function HomeCategories() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           
           {/* 1. إضاءة */}
-          <a
+          <Link
             className="group relative block p-6 rounded-2xl bg-[#161616] border border-[#262626] overflow-hidden hover:border-orange-500/30 transition-all duration-500 hover:-translate-y-1"
-            href={`/blog?category=${encodeURIComponent('إضاءة')}`}
+            to={`/blog?category=${encodeURIComponent('إضاءة')}`}
             style={{ animationDelay: '0ms' }}
           >
             <div className="absolute inset-0 bg-linear-to-br from-orange-500 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -43,12 +44,12 @@ export default function HomeCategories() {
                 <HiOutlineArrowNarrowLeft className="w-4 h-4 text-white" />
               </div>
             </div>
-          </a>
+          </Link>
 
           {/* 2. بورتريه */}
-          <a
+          <Link
             className="group relative block p-6 rounded-2xl bg-[#161616] border border-[#262626] overflow-hidden hover:border-orange-500/30 transition-all duration-500 hover:-translate-y-1"
-            href={`/blog?category=${encodeURIComponent('بورتريه')}`}
+            to={`/blog?category=${encodeURIComponent('بورتريه')}`}
             style={{ animationDelay: '100ms' }}
           >
             <div className="absolute inset-0 bg-linear-to-br from-orange-500 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -62,12 +63,12 @@ export default function HomeCategories() {
                 <HiOutlineArrowNarrowLeft className="w-4 h-4 text-white" />
               </div>
             </div>
-          </a>
+          </Link>
 
           {/* 3. مناظر طبيعية */}
-          <a
+          <Link
             className="group relative block p-6 rounded-2xl bg-[#161616] border border-[#262626] overflow-hidden hover:border-orange-500/30 transition-all duration-500 hover:-translate-y-1"
-            href={`/blog?category=${encodeURIComponent('مناظر طبيعية')}`}
+            to={`/blog?category=${encodeURIComponent('مناظر طبيعية')}`}
             style={{ animationDelay: '200ms' }}
           >
             <div className="absolute inset-0 bg-linear-to-br from-orange-500 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -81,12 +82,12 @@ export default function HomeCategories() {
                 <HiOutlineArrowNarrowLeft className="w-4 h-4 text-white" />
               </div>
             </div>
-          </a>
+          </Link>
 
           {/* 4. تقنيات */}
-          <a
+          <Link
             className="group relative block p-6 rounded-2xl bg-[#161616] border border-[#262626] overflow-hidden hover:border-orange-500/30 transition-all duration-500 hover:-translate-y-1"
-            href={`/blog?category=${encodeURIComponent('تقنيات')}`}
+            to={`/blog?category=${encodeURIComponent('تقنيات')}`}
             style={{ animationDelay: '300ms' }}
           >
             <div className="absolute inset-0 bg-linear-to-br from-orange-500 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -100,12 +101,12 @@ export default function HomeCategories() {
                 <HiOutlineArrowNarrowLeft className="w-4 h-4 text-white" />
               </div>
             </div>
-          </a>
+          </Link>
 
           {/* 5. معدات */}
-          <a
+          <Link
             className="group relative block p-6 rounded-2xl bg-[#161616] border border-[#262626] overflow-hidden hover:border-orange-500/30 transition-all duration-500 hover:-translate-y-1"
-            href={`/blog?category=${encodeURIComponent('معدات')}`}
+            to={`/blog?category=${encodeURIComponent('معدات')}`}
             style={{ animationDelay: '400ms' }}
           >
             <div className="absolute inset-0 bg-linear-to-br from-orange-500 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -119,7 +120,7 @@ export default function HomeCategories() {
                 <HiOutlineArrowNarrowLeft className="w-4 h-4 text-white" />
               </div>
             </div>
-          </a>
+          </Link>
 
         </div>
 

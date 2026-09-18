@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { BsGrid } from "react-icons/bs";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -10,7 +10,7 @@ export default function BlogGrid({ posts, activeCategory, onResetFilters, hasAct
     const [viewMode, setViewMode] = useState('grid')
     const [currentPage, setCurrentPage] = useState(1);
     const [prevPosts, setPrevPosts] = useState(posts);
-
+    const gridTopRef = useRef(null);
 
     if (posts !== prevPosts) {
         setPrevPosts(posts);
@@ -20,22 +20,26 @@ export default function BlogGrid({ posts, activeCategory, onResetFilters, hasAct
     const postsPerPage = 6;
     const totalPages = Math.ceil(posts.length / postsPerPage);
     const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
-
+ const scrollToTop = () => {
+        gridTopRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
     const handelPrev = () => {
         if (currentPage > 1) {
             setCurrentPage((prev) => prev - 1)
+            scrollToTop();
         }
     }
     const handelNext = () => {
         if (currentPage < pages.length) {
             setCurrentPage((prev) => prev + 1)
+            scrollToTop();
         }
     }
     const startIndex = (currentPage - 1) * postsPerPage;
     const currentPosts = posts.slice(startIndex, startIndex + postsPerPage);
     return (
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 scroll-mt-36.5">
+        <div ref={gridTopRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 scroll-mt-36.5">
             <div className="mb-8 flex items-center justify-between">
                 <p className="text-neutral-400">
                     عرض <span className="font-bold text-white">{posts.length}</span> مقالات
@@ -54,7 +58,7 @@ export default function BlogGrid({ posts, activeCategory, onResetFilters, hasAct
                         </button>
                     </div>
                     {hasActiveFilters &&
-                        <button onClick={onResetFilters} class="text-sm text-neutral-500 hover:text-orange-500 flex items-center gap-1 transition-colors"><IoMdClose className="w-4 h-4" /> مسح الفلاتر</button>
+                        <button onClick={onResetFilters} className="text-sm text-neutral-500 hover:text-orange-500 flex items-center gap-1 transition-colors"><IoMdClose className="w-4 h-4" /> مسح الفلاتر</button>
                     }
                 </div>
             </div>
@@ -81,7 +85,7 @@ export default function BlogGrid({ posts, activeCategory, onResetFilters, hasAct
                                 </button>
                                 <div className="flex items-center gap-1">
                                     {pages.map((page) => (
-                                        <button key={page} onClick={() => setCurrentPage(page)}
+                                        <button key={page} onClick={() => {setCurrentPage(page);scrollToTop();}}
                                             className={`min-w-11 h-11 rounded-xl text-sm font-medium transition-all duration-300 ${currentPage === page
                                                 ? `bg-linear-to-r from-orange-500 to-orange-600 text-white`
                                                 : `bg-[#161616] text-neutral-400 border border-[#262626] hover:border-orange-500/50 hover:text-white`

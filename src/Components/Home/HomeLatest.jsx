@@ -32,8 +32,8 @@ export default function HomeLatest({ posts = [] }) {
             <p className="section-subtitle max-w-lg">محتوى جديد طازج من المطبعة</p>
           </div>
 
-          <Link
-            to="/blog"
+          <Link to='/blog'
+            
             className="group inline-flex items-center gap-2 text-orange-500 font-semibold hover:text-orange-400 transition-colors"
           >
             عرض جميع المقالات

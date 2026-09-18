@@ -19,8 +19,8 @@ const router = createBrowserRouter([
       { path: 'blog/:slug', element: <PostDetails /> },
     ]
   }
-], {
-  basename: '/Adasa-App'   // 👈 ضيف ده هنا - نفس اسم الريبو بالظبط
+],{
+  basename: '/Adasa-App'
 })
 function App() {
 
